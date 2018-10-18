@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GSSoundHelper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="KeyMute" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">46</Value>
+    </Setting>
+    <Setting Name="ModifierMute" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="KeyUnMute" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">145</Value>
+    </Setting>
+    <Setting Name="ModifierUnMute" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
