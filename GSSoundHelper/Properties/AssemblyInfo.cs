@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associada a um assembly.
 [assembly: AssemblyTitle("GSSoundHelper")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Atalho de teclado  para mute/unmute de som")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Guiosoft")]
 [assembly: AssemblyProduct("GSSoundHelper")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright ©  2018 Guionardo Furlan")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

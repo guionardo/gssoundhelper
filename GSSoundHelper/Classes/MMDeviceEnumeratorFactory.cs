@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GSSoundHelper
+namespace GSSoundHelper.Classes
 {
     internal static class MMDeviceEnumeratorFactory
     {

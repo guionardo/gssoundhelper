@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnGravar.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnMinimizar.Text" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="niMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 48</value>
+  </data>
+  <data name="miConfigurar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="miConfigurar.Text" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="miSair.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="miSair.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="chkRunWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="chkRunWithWindows.Text" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="gbShortKey.Text" xml:space="preserve">
+    <value>Shortcut Key</value>
+  </data>
 </root>

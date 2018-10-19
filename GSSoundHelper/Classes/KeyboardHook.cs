@@ -2,8 +2,11 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace GSSoundHelper
+namespace GSSoundHelper.Classes
 {
+    /// <summary>
+    /// Classe para vincular atalhos de teclado a funções definidas
+    /// </summary>
     public sealed class KeyboardHook : IDisposable
     {
         // Registers a hot key with Windows.
@@ -39,7 +42,7 @@ namespace GSSoundHelper
                 {
                     // get the keys.
                     Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
-                    ModifierKeys modifier = (ModifierKeys)((int)m.LParam & 0xFFFF);
+                    KeyModifiers modifier = (KeyModifiers)((int)m.LParam & 0xFFFF);
 
                     // invoke the event to notify the parent.
                     KeyPressed?.Invoke(this, new KeyPressedEventArgs(modifier, key));
@@ -75,7 +78,7 @@ namespace GSSoundHelper
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        public void RegisterHotKey(ModifierKeys modifier, Keys key)
+        public void RegisterHotKey(KeyModifiers modifier, Keys key)
         {
             // increment the counter.
             _currentId = _currentId + 1;
@@ -112,13 +115,13 @@ namespace GSSoundHelper
     /// </summary>
     public class KeyPressedEventArgs : EventArgs
     {
-        internal KeyPressedEventArgs(ModifierKeys modifier, Keys key)
+        internal KeyPressedEventArgs(KeyModifiers modifier, Keys key)
         {
             Modifier = modifier;
             Key = key;
         }
 
-        public ModifierKeys Modifier { get; }
+        public KeyModifiers Modifier { get; }
 
         public Keys Key { get; }
     }
@@ -127,7 +130,7 @@ namespace GSSoundHelper
     /// The enumeration of possible modifiers.
     /// </summary>
     [Flags]
-    public enum ModifierKeys : uint
+    public enum KeyModifiers : uint
     {
         Alt = 1,
         Control = 2,

@@ -1,21 +1,23 @@
 ﻿using System;
 
-namespace GSSoundHelper
+namespace GSSoundHelper.Classes
 {
-
-    public static class SoundMute
+    /// <summary>
+    /// Classe para tratamento do volume da placa de som
+    /// </summary>
+    public static class SoundHelper
     {
         static readonly bool OK = false;
         static IAudioEndpointVolume aepv;
 
-        static SoundMute()
+        static SoundHelper()
         {
             try
             {
                 IMMDeviceEnumerator deviceEnumerator = MMDeviceEnumeratorFactory.CreateInstance();
                 const int eRender = 0;
                 const int eMultimedia = 1;
-                deviceEnumerator.GetDefaultAudioEndpoint(eRender, eMultimedia, out IMMDevice speakers);                
+                deviceEnumerator.GetDefaultAudioEndpoint(eRender, eMultimedia, out IMMDevice speakers);
                 speakers.Activate(typeof(IAudioEndpointVolume).GUID, 0, IntPtr.Zero, out object aepv_obj);
                 aepv = (IAudioEndpointVolume)aepv_obj;
 
@@ -63,7 +65,7 @@ namespace GSSoundHelper
             try
             {
                 Guid ZeroGuid = new Guid();
-                aepv.SetMasterVolumeLevelScalar(Level / 100f, ZeroGuid);                
+                aepv.SetMasterVolumeLevelScalar(Level / 100f, ZeroGuid);
                 return true;
             }
             catch (Exception e)
