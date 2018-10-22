@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
+using System.Diagnostics;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GSSoundHelper
@@ -15,11 +11,11 @@ namespace GSSoundHelper
         {
             InitializeComponent();
             this.Text = String.Format("Sobre {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Versão {0}", AssemblyVersion);
+            this.labelProductName.Text = String.Format("{0} {1}", AssemblyProduct, AssemblyVersion);
+            this.labelRepository.Text = "https://github.com/guionardo/gssoundhelper";
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription+"\n\r" +
+            this.textBoxDescription.Text = AssemblyDescription + "\n\r" +
                 " Icons made by [SmashIcons](https://www.flaticon.com/authors/smashicons) from www.flaticon.com";
         }
 
@@ -102,5 +98,41 @@ namespace GSSoundHelper
             }
         }
         #endregion
+
+        private void labelRepository_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start(labelRepository.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu uma exceção: " + ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void labelCompanyName_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("https://github.com/guionardo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu uma exceção: " + ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void labelCopyright_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("https://twitter.com/guionardo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu uma exceção: " + ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }
